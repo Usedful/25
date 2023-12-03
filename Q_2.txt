@@ -1,0 +1,23 @@
+Q.2. Write a python program to Implement Simple Linear Regression for predicting house 
+price. 
+
+Ans ->
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+import hvplot.pandas
+%matplotlib inline
+# sns.set_style("whitegrid")
+# plt.style.use("fivethirtyeight")
+USAhousing = pd.read_csv('/kaggle/input/usa-housing/USA_Housing.csv')
+USAhousing.head()
+USAhousing.info() 
+USAhousing.describe()
+USAhousing.columns
+sns.pairplot(USAhousing)
+USAhousing.hvplot.hist(by='Price', subplots=False, width=1000)
+USAhousing.hvplot.hist("Price")
+USAhousing.hvplot.scatter(x='Avg. Area House Age', y='Price')
+USAhousing.hvplot.scatter(x='Avg. Area Income', y='Price')
